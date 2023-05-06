@@ -14,6 +14,7 @@ public class radioTest {
         int actual = rad.getChannelRadio();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void MaxNextChannelRadioTest() {//установка каналла выше максимального MAX возможного каналла (9)
         radio rad = new radio();
@@ -23,6 +24,7 @@ public class radioTest {
         int actual = rad.getChannelRadio();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void PrevChannelRadioTest() {//понижение каналлов в пределах диапазона
         radio rad = new radio();
@@ -32,6 +34,7 @@ public class radioTest {
         int actual = rad.getChannelRadio();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void MinPrevChannelRadioTest() {//понижение каналлов, переход с 0 на 9 каналл
         radio rad = new radio();
@@ -41,8 +44,9 @@ public class radioTest {
         int actual = rad.getChannelRadio();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
-    public void UpVolumeRadioTest(){// метод повышения уровни громкости
+    public void UpVolumeRadioTest() {// метод повышения уровни громкости
         radio rad = new radio();
 
         rad.volumeRadio = 55;
@@ -51,8 +55,9 @@ public class radioTest {
         int actual = rad.getVolumeRadio();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
-    public void MaxUpVolumeRadioTest(){// метод повышения уровня громкости при MAX уровне (100)
+    public void MaxUpVolumeRadioTest() {// метод повышения уровня громкости при MAX уровне (100)
         radio rad = new radio();
 
         rad.volumeRadio = 100;
@@ -61,8 +66,9 @@ public class radioTest {
         int actual = rad.getVolumeRadio();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
-    public void BottomVolumeRadioTest(){// метод понижения уровни громкости
+    public void BottomVolumeRadioTest() {// метод понижения уровни громкости
         radio rad = new radio();
 
         rad.volumeRadio = 55;
@@ -71,8 +77,9 @@ public class radioTest {
         int actual = rad.getVolumeRadio();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
-    public void MinBottomVolumeRadioTest(){ // метод понижения уровня громкости при MIN уровне (0)
+    public void MinBottomVolumeRadioTest() { // метод понижения уровня громкости при MIN уровне (0)
         radio rad = new radio();
 
         rad.volumeRadio = 0;

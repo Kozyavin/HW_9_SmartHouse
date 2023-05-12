@@ -21,7 +21,7 @@ public class Radio {
         volumeRadio = newVolumeRadio;
     }
 
-    public void NextChannel() {
+    public void nextChannel() {
         if (channelRadio < 9 & channelRadio >= 0) {
             channelRadio++;
             return;
@@ -33,19 +33,20 @@ public class Radio {
         }
     }
 
-    public void PrevChannel() { //метод понижения каналла
+    public void prevChannel() { //метод понижения каналла
         if (channelRadio <= 9 & channelRadio > 0) {
             channelRadio--;
             return;
         }
         if (channelRadio == 0) {
             channelRadio = 9;
+
         } else {
             channelRadio = 0;
         }
     }
 
-    public void UpVolumeRadio() {
+    public void upVolumeRadio() {
         if (volumeRadio >= 0 & volumeRadio < 100) {
             volumeRadio++;
         } else {
@@ -53,7 +54,7 @@ public class Radio {
         }
     }
 
-    public void BottomVolumeRadio() {
+    public void bottomVolumeRadio() {
         if (volumeRadio > 0 & volumeRadio <= 100) {
             volumeRadio--;
         } else {

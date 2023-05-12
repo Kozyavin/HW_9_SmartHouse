@@ -11,7 +11,7 @@ public class RadioTest {
         Radio rad = new Radio();
 
         rad.setChannelRadio(5);
-        rad.NextChannel();
+        rad.nextChannel();
         int expected = 6;
         int actual = rad.getChannelRadio();
         Assertions.assertEquals(expected, actual);
@@ -22,7 +22,7 @@ public class RadioTest {
         Radio rad = new Radio();
 
         rad.setChannelRadio(9);
-        rad.NextChannel();
+        rad.nextChannel();
         int expected = 0;
         int actual = rad.getChannelRadio();
         Assertions.assertEquals(expected, actual);
@@ -33,7 +33,7 @@ public class RadioTest {
         Radio rad = new Radio();
 
         rad.setChannelRadio(10);
-        rad.NextChannel();
+        rad.nextChannel();
         int expected = 9;
         int actual = rad.getChannelRadio();
         Assertions.assertEquals(expected, actual);
@@ -44,7 +44,7 @@ public class RadioTest {
         Radio rad = new Radio();
 
         rad.setChannelRadio(-1);
-        rad.NextChannel();
+        rad.nextChannel();
         int expected = 9;
         int actual = rad.getChannelRadio();
         Assertions.assertEquals(expected, actual);
@@ -55,7 +55,7 @@ public class RadioTest {
         Radio rad = new Radio();
 
         rad.setChannelRadio(5);
-        rad.PrevChannel();
+        rad.prevChannel();
         int expected = 4;
         int actual = rad.getChannelRadio();
         Assertions.assertEquals(expected, actual);
@@ -66,7 +66,7 @@ public class RadioTest {
         Radio rad = new Radio();
 
         rad.setChannelRadio(0);
-        rad.PrevChannel();
+        rad.prevChannel();
 
         int expected = 9;
         int actual = rad.getChannelRadio();
@@ -78,7 +78,7 @@ public class RadioTest {
         Radio rad = new Radio();
 
         rad.setChannelRadio(-1);
-        rad.PrevChannel();
+        rad.prevChannel();
         int expected = 0;
         int actual = rad.getChannelRadio();
         Assertions.assertEquals(expected, actual);
@@ -89,7 +89,7 @@ public class RadioTest {
         Radio rad = new Radio();
 
         rad.setChannelRadio(10);
-        rad.PrevChannel();
+        rad.prevChannel();
         int expected = 0;
         int actual = rad.getChannelRadio();
         Assertions.assertEquals(expected, actual);
@@ -100,7 +100,7 @@ public class RadioTest {
         Radio rad = new Radio();
 
         rad.setVolumeRadio(55);
-        rad.UpVolumeRadio();
+        rad.upVolumeRadio();
         int expected = 56;
         int actual = rad.getVolumeRadio();
         Assertions.assertEquals(expected, actual);
@@ -111,7 +111,7 @@ public class RadioTest {
         Radio rad = new Radio();
 
         rad.setVolumeRadio(100);
-        rad.UpVolumeRadio();
+        rad.upVolumeRadio();
         int expected = 100;
         int actual = rad.getVolumeRadio();
         Assertions.assertEquals(expected, actual);
@@ -122,7 +122,7 @@ public class RadioTest {
         Radio rad = new Radio();
 
         rad.setVolumeRadio(-1);
-        rad.UpVolumeRadio();
+        rad.upVolumeRadio();
         int expected = 100;
         int actual = rad.getVolumeRadio();
         Assertions.assertEquals(expected, actual);
@@ -133,7 +133,7 @@ public class RadioTest {
         Radio rad = new Radio();
 
         rad.setVolumeRadio(55);
-        rad.BottomVolumeRadio();
+        rad.bottomVolumeRadio();
         int expected = 54;
         int actual = rad.getVolumeRadio();
         Assertions.assertEquals(expected, actual);
@@ -144,7 +144,7 @@ public class RadioTest {
         Radio rad = new Radio();
 
         rad.setVolumeRadio(0);
-        rad.BottomVolumeRadio();
+        rad.bottomVolumeRadio();
         int expected = 0;
         int actual = rad.getVolumeRadio();
         Assertions.assertEquals(expected, actual);
@@ -155,9 +155,11 @@ public class RadioTest {
         Radio rad = new Radio();
 
         rad.setVolumeRadio(101);
-        rad.BottomVolumeRadio();
+        rad.bottomVolumeRadio();
         int expected = 0;
         int actual = rad.getVolumeRadio();
         Assertions.assertEquals(expected, actual);
     }
+
+
 }

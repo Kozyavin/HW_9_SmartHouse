@@ -5,6 +5,27 @@ import org.junit.jupiter.api.Test;
 
 public class RadioTest {
 
+    @Test
+    public void NextPositiveIntervalTest() {
+        Radio rad = new Radio(20);
+
+        rad.setChannelRadio(11);
+        rad.nextChannel();
+        int expected = 12;
+        int actual = rad.getChannelRadio();
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void NextNegativeIntervalTest() {// при sizeChannel <=0, будет по умолчанию sizeChannel =10 (или же maxChannelRadio =9)
+        Radio rad = new Radio(-5);
+
+        rad.setChannelRadio(11);
+        rad.nextChannel();
+        int expected = 9;
+        int actual = rad.getChannelRadio();
+        Assertions.assertEquals(expected, actual);
+    }
 
     @Test
     public void NextChannelRadioTest() {
@@ -67,7 +88,6 @@ public class RadioTest {
 
         rad.setChannelRadio(0);
         rad.prevChannel();
-
         int expected = 9;
         int actual = rad.getChannelRadio();
         Assertions.assertEquals(expected, actual);

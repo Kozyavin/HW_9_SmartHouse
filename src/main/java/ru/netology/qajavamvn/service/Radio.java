@@ -2,8 +2,24 @@ package ru.netology.qajavamvn.service;
 
 public class Radio {
 
+    private int maxChannelRadio = 9;
+    private int minChannelRadio = 0;
     private int channelRadio;
     private int volumeRadio;
+    private int maxVolumeRadio = 100;
+    private int minVolumeRadio = 0;
+
+    public Radio() {
+
+    }
+    public Radio(int sizeChannel) {
+        if(sizeChannel <= 0){
+            return;    //выход в этом месте = возврат к пустому конструктору public Radio(){ }
+        }
+        else
+        {maxChannelRadio = sizeChannel -1;}
+
+    }
 
     public int getChannelRadio() {
         return channelRadio;
@@ -22,43 +38,42 @@ public class Radio {
     }
 
     public void nextChannel() {
-        if (channelRadio < 9 & channelRadio >= 0) {
+        if (channelRadio < maxChannelRadio & channelRadio >= minChannelRadio) {
             channelRadio++;
             return;
         }
-        if (channelRadio == 9) {
-            channelRadio = 0;
+        if (channelRadio == maxChannelRadio) {
+            channelRadio = minChannelRadio;
         } else {
-            channelRadio = 9;
+            channelRadio = maxChannelRadio;
         }
     }
 
     public void prevChannel() { //метод понижения каналла
-        if (channelRadio <= 9 & channelRadio > 0) {
+        if (channelRadio <= maxChannelRadio & channelRadio > minChannelRadio) {
             channelRadio--;
             return;
         }
-        if (channelRadio == 0) {
-            channelRadio = 9;
-
+        if (channelRadio == minChannelRadio) {
+            channelRadio = maxChannelRadio;
         } else {
-            channelRadio = 0;
+            channelRadio = minChannelRadio;
         }
     }
 
     public void upVolumeRadio() {
-        if (volumeRadio >= 0 & volumeRadio < 100) {
+        if (volumeRadio >= minVolumeRadio & volumeRadio < maxVolumeRadio) {
             volumeRadio++;
         } else {
-            volumeRadio = 100;
+            volumeRadio = maxVolumeRadio;
         }
     }
 
     public void bottomVolumeRadio() {
-        if (volumeRadio > 0 & volumeRadio <= 100) {
+        if (volumeRadio > minVolumeRadio & volumeRadio <= maxVolumeRadio) {
             volumeRadio--;
         } else {
-            volumeRadio = 0;
+            volumeRadio = minVolumeRadio;
         }
     }
 }
